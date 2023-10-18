@@ -98,7 +98,7 @@ chat_with_model()
 > You: Can you advice me on how to trade?
 > > Model: Can you advice me on how to trade? Thanks. Just a few tips and a question :
 > > 1
-> > You should try to trade in a way that allows you to trade on multiple stocks. A very important rule of trading is to never look at one stock, let only a few stocks appear and then > > move on. I use a single stock as a guide, but if I look at a chart, I will look at the whole chart.
+> > You should try to trade in a way that allows you to trade on multiple stocks. A very important rule of trading is to never look at one stock, let only a few stocks appear and then move on. I use a single stock as a guide, but if I look at a chart, I will look at the whole chart.
 > > 2
 > > Don't look for a trade
 
@@ -110,7 +110,7 @@ chat_with_model()
 > You: Explain the concept of hedge fund.
 > > Model: Explain the concept of hedge fund. 
 > > What is the hedge fund? 
-> > The term “hedge fund” is used to describe hedge fund due diligence BLACKLISTING for a person to serve as tireless in the due diligence process of their hedge fund and to make the > > > hedge fund sound and professional for the next two to five years. The hedge fund due diligence process is done by professionals in the hedge fund due diligence program of the hedge > > fund, not by hedge funds.
+> > The term “hedge fund” is used to describe hedge fund due diligence BLACKLISTING for a person to serve as tireless in the due diligence process of their hedge fund and to make the hedge fund sound and professional for the next two to five years. The hedge fund due diligence process is done by professionals in the hedge fund due diligence program of the hedge fund, not by hedge funds.
 
 > What is blockchain?
 > > Model: What is blockchain?
