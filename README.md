@@ -1,7 +1,7 @@
 # financial-language-model
 ___
 ## Описание
-Данный репозиторий представляет собой проект, направленный на разработку NLP модели, специализированной в финансовой сфере. Модель была fine-tuned на предобученной модели gpt2 с использованием разнообразных источников данных, включая Reddit, Wikipedia, Investopedia, и финансовые книги. Большая часть данных была получена путем парсинга финансовых ресурсов.
+Данный репозиторий представляет собой проект, направленный на разработку NLP модели, специализированной в финансовой сфере. Модель была fine-tuned на предобученной модели gpt2 с использованием разнообразных источников данных, включая Reddit, Wikipedia, Investopedia и финансовые книги. Большая часть данных была получена путем парсинга финансовых ресурсов. Модель была обучена на английском языке.
 
 __Цели разработки проекта__:
 * __Изучение методов генераци текста__: Проект направлен на исследование и понимание методов генерации текста с использованием NLP моделей.
@@ -74,7 +74,58 @@ __Результаты__:
 
 После всех настроек и улучшений, модель продемонстрировала некоторые успехи в генерации текста в финансовой сфере. Однако, производительность модели остается недостаточной.
 ## Демонстрация модели
+При тестировании модели были использованы следующие параметры:
+```Python
+model_dir = "/content/drive/MyDrive/NLP/final_model"
+model = GPT2LMHeadModel.from_pretrained(model_dir)
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
+def chat_with_model():
+  while True:
+    user_input = input("You: ")
+    input_ids = tokenizer.encode(user_input, return_tensors='pt')
+
+    response_ids = model.generate(input_ids, max_length=100, num_return_sequences=1,
+                                  temperature=0.9, top_k=15, do_sample=True,
+                                  pad_token_id=model.config.eos_token_id)
+
+    response = tokenizer.decode(response_ids[0], skip_special_tokens=True)
+    print(f"Model: {response}")
+
+chat_with_model()
+```
+Ниже представлены результаты:
+> You: Can you advice me on how to trade?
+> > Model: Can you advice me on how to trade? Thanks. Just a few tips and a question :
+> > 1
+> > You should try to trade in a way that allows you to trade on multiple stocks. A very important rule of trading is to never look at one stock, let only a few stocks appear and then > > move on. I use a single stock as a guide, but if I look at a chart, I will look at the whole chart.
+> > 2
+> > Don't look for a trade
+> You: What is cryptocurrency?
+> > Model: What is cryptocurrency?
+> > It's a digital currency.
+> > You don't need to own a cryptocurrency to use it. Just have a wallet and have access to the network, and you don't need to pay for it.
+> You: Explain the concept of hedge fund.
+> > Model: Explain the concept of hedge fund. 
+> > What is the hedge fund? 
+> > The term “hedge fund” is used to describe hedge fund due diligence BLACKLISTING for a person to serve as tireless in the due diligence process of their hedge fund and to make the > > > hedge fund sound and professional for the next two to five years. The hedge fund due diligence process is done by professionals in the hedge fund due diligence program of the hedge > > fund, not by hedge funds.
+> What is blockchain?
+> > Model: What is blockchain?
+> > It’s essentially a system to verify transactions between parties in a blockchain without the need for a central server, or an authority for any of the other things
+Неудачные результаты теста:
+> You: How to become rich?
+> > Model: How to become rich?
+> > I'm not a billionaire, I'm a f**ing human being.
+> > I am not saying that I am self-made. I'm saying that I am self-made.
+> You: How to calculate a stock price?
+> > Model: How to calculate a stock price?
+> > Stock price = Stock price + Stock price - (100-100)
+> > The stock  (stock)  is the stock with the highest number of days to maturity. The market price of the stock (the price at which it is sold) is called the market price.
+> You: If I buy stocks without conducting research, will I lose my money?
+> > Model: If I buy stocks without conducting research, will I lose my money?
+> > It's all bu***hit
+> > You know what to watch out for. You’re all idiots who have no idea what they are doing. 
+> > If you have the ability to read charts and you are going to watch the news, then you know you are watching what happens next, so you don't lose your money.
 ## Инструменты и технологии
 * Python
 * Hugging Face transformers
