@@ -9,6 +9,10 @@ __Project Development Objectives__:
 * __Studying Text Generation Methods__: The project aims to explore and comprehend text generation methods using NLP models.
 * __Training the Model on Financial Data__: The project involves training on specific financial data, which presents its own technical and linguistic complexities.
 * __Performance Evaluation__: A crucial part of the project is assessing the model's performance post-training and identifying potential limitations.
+
+## Deployed Demo Model
+The model can be tested via the [HuggingFace Space](https://huggingface.co/spaces/kowalsky/financial_wisdom_from_reddit)
+
 ## Training Process
 __Model and Tokenizer Selection__:
 
